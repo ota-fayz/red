@@ -1,0 +1,23 @@
+{
+  "name": "red",
+  "version": "1.0.0",
+  "description": "Landing Page for Red Mountain - A Logistic Company!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ota2411/red.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ota2411/red/issues"
+  },
+  "homepage": "https://github.com/ota2411/red#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
