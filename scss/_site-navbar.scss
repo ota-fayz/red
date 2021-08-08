@@ -1,3 +1,10 @@
+#map {
+	height: 400px;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
 .site-navbar {
 	margin-bottom: 0px;
 	z-index: 1999;
@@ -21,7 +28,12 @@
 			color: $white;
 		}
 	}
-	
+
+	@media only screen and (max-width: 1023px) {
+		.site-logo-img {
+			width: 20%;
+		}
+	}
 
 	.site-menu-toggle {
 		color: $white;
