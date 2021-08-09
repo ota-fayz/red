@@ -255,6 +255,15 @@ h1, h2, h3, h4, h5,
 	}
 }
 
+.moreText {
+	daisplay: none;
+}
+
+.readmore a.more{
+	display: block;
+	cursor: pointer;
+}
+
 .img-md-fluid {
 	@include media-breakpoint-down(md) {
 		max-width: 100%;

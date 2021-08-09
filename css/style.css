@@ -269,6 +269,15 @@ h1, h2, h3, h4, h5,
   z-index: 1;
 }
 
+.moreText {
+  daisplay: none;
+}
+
+.readmore a.more {
+  display: block;
+  cursor: pointer;
+}
+
 @media (max-width: 991.98px) {
   .img-md-fluid {
     max-width: 100%;
