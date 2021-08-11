@@ -1,15 +1,10 @@
-const express = require("express");
-const {text} = require("express");
 const contactForm = document.querySelector('.p-5');
-const app = express()
 
 let fname = document.getElementById('fname')
 let lname = document.getElementById('lname')
 let email = document.getElementById('email')
 let phone = document.getElementById('phone')
 let message = document.getElementById('message')
-
-
 
 contactForm.addEventListener('submit', (e)=>{
     e.preventDefault();
@@ -19,7 +14,7 @@ contactForm.addEventListener('submit', (e)=>{
         lname: lname.value,
         email: email.value,
         phone: phone.value,
-        message: message.value,
+        message: message.value
     }
 
     let xhr = new XMLHttpRequest();
@@ -28,18 +23,15 @@ contactForm.addEventListener('submit', (e)=>{
     xhr.onload = function(){
         console.log(xhr.responseText);
         if(xhr.responseText == 'Success'){
-            var alert = 'Email sent'
-            name = 'Email sent'
+            alert('Email sent');
             fname.value = '';
             lname.value = '';
             email.value = '';
             phone.value = '';
             message.value = '';
         }else{
-             alert = 'Something went wrong'
-
+            alert('Something went wrong')
         }
-        console.log(alert)
     }
     xhr.send(JSON.stringify(formData))
 })

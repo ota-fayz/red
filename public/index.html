@@ -384,16 +384,16 @@
         <div class="row">
             <div class="col-md-7 mb-5">
 
-                <form id="form" class="p-5 bg-white">
+                <form  id="form"  class="p-5 bg-white">
 
                     <div class="row form-group">
                         <div class="col-md-6 mb-3 mb-md-0">
                             <label class="text-black" for="fname">First Name</label>
-                            <input type="text" id="fname" class="form-control " required>
+                            <input type="text" id="fname" class="form-control " required >
                         </div>
                         <div class="col-md-6">
                             <label class="text-black" for="lname">Last Name</label>
-                            <input type="text" id="lname" class="form-control ">
+                            <input type="text" id="lname" class="form-control " required>
                         </div>
                     </div>
 
@@ -401,7 +401,7 @@
 
                         <div class="col-md-12">
                             <label class="text-black" for="email">Email</label>
-                            <input type="email" id="email" class="form-control " required>
+                            <input type="email" id="email" class="form-control " required >
                         </div>
                     </div>
 
@@ -416,38 +416,16 @@
                     <div class="row form-group">
                         <div class="col-md-12">
                             <label class="text-black" for="message">Message</label>
-                            <textarea id="message" cols="30" rows="7" class="form-control"></textarea>
+                            <textarea  id="message" cols="30" rows="7" class="form-control"></textarea>
                         </div>
                     </div>
 
                     <div class="row form-group">
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary py-2 px-4 text-white" data-toggle="modal"
-                                    data-target="#exampleModal">
-                                Send Message
-                            </button>
-                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                                 aria-labelledby="exampleModalLabel" aria-hidden="true" style="padding-top: 300px">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Completed!</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true"></span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <script>var alert = "<%= alert %>";</script>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <input type="submit" value="Send Message" class="btn btn-primary py-2 px-4 text-white submit" >
                         </div>
                     </div>
+
 
                 </form>
             </div>

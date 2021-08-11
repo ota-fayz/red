@@ -5,7 +5,7 @@ const nodemailer = require('nodemailer')
 const PORT = process.env.PORT || 5000
 
 //Middleware
-app.use(express.static('public'))
+app.use(express.static('/public'))
 app.use(express.json())
 
 app.get('/', (req,res)=> {
@@ -17,8 +17,8 @@ app.post('/', (req,res)=>{
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: '', //username from gmail
-            pass: '' // password from gmail account
+            user: 'tory3303@gmail.com',
+            pass: '9419506v'
         }
     })
     const mailOptions = {
