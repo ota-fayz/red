@@ -35,6 +35,12 @@
 		}
 	}
 
+	@media only screen and (min-width: 768px) {
+		.site-logo-header {
+			padding-top: 10px;
+		}
+	}
+
 	.site-menu-toggle {
 		color: $white;
 	}
