@@ -5,5 +5,7 @@ In order to switch on server side, type following command
 cd server
 npm i
 npm run dev
+***********
+npm run start command for deploy
 
 Front side in the folder public

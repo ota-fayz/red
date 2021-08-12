@@ -1,23 +1,15 @@
 {
-  "name": "red",
+  "name": "server",
   "version": "1.0.0",
-  "description": "Landing Page for Red Mountain - A Logistic Company!",
-  "main": "./public/js/index.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ota2411/red.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ota2411/red/issues"
-  },
-  "homepage": "https://github.com/ota2411/red#readme",
   "dependencies": {
     "express": "^4.17.1",
     "nodemailer": "^6.6.3"

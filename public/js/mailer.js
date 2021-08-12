@@ -1,10 +1,10 @@
-const contactForm = document.querySelector('.p-5');
+const contactForm = document.querySelector('.contact-from');
 
-let fname = document.getElementById('fname')
-let lname = document.getElementById('lname')
-let email = document.getElementById('email')
-let phone = document.getElementById('phone')
-let message = document.getElementById('message')
+let fname = document.getElementById('fname');
+let lname = document.getElementById('lname');
+let email = document.getElementById('email');
+let phone = document.getElementById('phone');
+let message = document.getElementById('message');
 
 contactForm.addEventListener('submit', (e)=>{
     e.preventDefault();
@@ -22,16 +22,15 @@ contactForm.addEventListener('submit', (e)=>{
     xhr.setRequestHeader('content-type','application/json' );
     xhr.onload = function(){
         console.log(xhr.responseText);
-        if(xhr.responseText == 'Success'){
-            alert('Email sent');
+        if(xhr.responseText == 'success'){
             fname.value = '';
             lname.value = '';
             email.value = '';
             phone.value = '';
             message.value = '';
         }else{
-            alert('Something went wrong')
+            console.log('fail')
         }
     }
-    xhr.send(JSON.stringify(formData))
+    xhr.send(JSON.stringify(formData));
 })
