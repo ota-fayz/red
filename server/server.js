@@ -36,12 +36,11 @@ app.post('/', (req,res)=>{
     const mailOptions = {
         from: req.body.email,
         to: 'gorskyalex20@gmail.com' ,
-        subject: `Message from website`,
-        text: `Message from website`,
+        subject: `Message from website Red Mountain`,
         html:
             `<p>
-                fname: ${req.body.fname} <br> 
-                lname: ${req.body.lname} <br> 
+                first name: ${req.body.fname} <br> 
+                last name: ${req.body.lname} <br> 
                 email: ${req.body.email} <br> 
                 phone: ${req.body.phone} <br>
                 message: ${req.body.message}
