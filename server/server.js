@@ -39,11 +39,11 @@ app.post('/', (req,res)=>{
         subject: `Message from website Red Mountain`,
         html:
             `<p>
-                first name: ${req.body.fname} <br> 
-                last name: ${req.body.lname} <br> 
-                email: ${req.body.email} <br> 
-                phone: ${req.body.phone} <br>
-                message: ${req.body.message}
+                First name: ${req.body.fname} <br> 
+                Last name: ${req.body.lname} <br> 
+                Email: ${req.body.email} <br> 
+                Phone: ${req.body.phone} <br>
+                Message: ${req.body.message}
             </p>`
     }
 
