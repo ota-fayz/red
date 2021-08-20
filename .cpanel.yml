@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/f9cszye2oga3/public_html/red/
+    - export DEPLOYPATH=/home/f9cszye2oga3/repositories/red/
     - /bin/cp * $DEPLOYPATH
