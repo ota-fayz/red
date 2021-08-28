@@ -2,17 +2,20 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const nodemailer = require('nodemailer');
+const path = require('path');
 
 const PORT = process.env.PORT || 5000;
 const email = process.env.EMAIL;
 const pass = process.env.PASS;
+const apiKey = process.env.API_KEY
 
 //Middleware
 app.use(express.static('../static'));
 app.use(express.json());
 
 app.get('/', (req,res)=> {
-    res.sendFile(__dirname + '/static/index.html')
+    const mainPath = path.join("static", "index.html");
+    res.sendFile(`${mainPath}`)
 });
 
 app.post('/', (req,res)=>{
@@ -63,5 +66,5 @@ app.post('/', (req,res)=>{
 })
 
 app.listen(PORT, ()=>{
-    console.log(`Server running on port ${PORT}`)
+    console.log(`Server running on port ${PORT}`);
 })
