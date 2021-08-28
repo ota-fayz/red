@@ -7,14 +7,13 @@ const path = require('path');
 const PORT = process.env.PORT || 5000;
 const email = process.env.EMAIL;
 const pass = process.env.PASS;
-const apiKey = process.env.API_KEY
 
 //Middleware
 app.use(express.static('../static'));
 app.use(express.json());
 
 app.get('/', (req,res)=> {
-    const mainPath = path.join("static", "index.html");
+    const mainPath = path.join(`${__dirname}`, '../static', "index.html");
     res.sendFile(`${mainPath}`)
 });
 
