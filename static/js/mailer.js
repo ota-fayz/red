@@ -6,10 +6,10 @@ let email = document.getElementById('email');
 let phone = document.getElementById('phone');
 let message = document.getElementById('message');
 
-contactForm.addEventListener('submit', (e)=>{
+contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    let formData ={
+    let newFormData = {
         fname: fname.value,
         lname: lname.value,
         email: email.value,
@@ -19,18 +19,23 @@ contactForm.addEventListener('submit', (e)=>{
 
     let xhr = new XMLHttpRequest();
     xhr.open('POST', '/');
-    xhr.setRequestHeader('content-type','application/json' );
-    xhr.onload = function(){
+    xhr.setRequestHeader('content-type', 'application/json');
+    xhr.onload = function () {
         console.log(xhr.responseText);
-        if(xhr.responseText == 'success'){
+        if (xhr.responseText === 'success') {
             fname.value = '';
             lname.value = '';
             email.value = '';
             phone.value = '';
             message.value = '';
-        }else{
+        } else {
             console.log('fail')
         }
     }
-    xhr.send(JSON.stringify(formData));
+    try {
+        xhr.send(JSON.stringify(newFormData));
+    } catch (e) {
+        console.log(e);
+    }
+
 })
