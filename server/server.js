@@ -9,12 +9,12 @@ const email = process.env.EMAIL;
 const pass = process.env.PASS;
 
 //Middleware
-app.use(express.static('../static'));
+app.use(express.static(path.join(`${__dirname}`, '../static')));
 app.use(express.json());
 
 app.get('/', (req,res)=> {
     const mainPath = path.join(`${__dirname}`, '../static', "index.html");
-    res.sendFile(`${mainPath}`)
+    res.sendFile(`${mainPath}`);
 });
 
 app.post('/', (req,res)=>{
@@ -58,7 +58,7 @@ app.post('/', (req,res)=>{
             res.send(error);
         } else {
             console.log('Email sent: ' + info.response);
-            res.send('success')
+            res.send('success');
         }
     });
 
