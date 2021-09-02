@@ -35,8 +35,8 @@ app.post('/', (req,res)=>{
     //     port: 587,
     //     // secure true,
     //     auth: {
-    //         user: 'gorskyalex20@gmail.com',
-    //         pass: 'kvxi2020@'
+    //         user: '',
+    //         pass: ''
     //     }
     // });
 
