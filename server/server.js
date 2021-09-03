@@ -27,6 +27,9 @@ app.post('/', (req,res)=>{
         auth: {
             user: `${email}`,
             pass: `${pass}`
+        },
+        tls: {
+            rejectUnauthorized: false
         }
     });
 
