@@ -12,24 +12,22 @@ const pass = process.env.PASS;
 app.use(express.static(path.join(`${__dirname}`, '../static')));
 app.use(express.json());
 
-app.get('/', (req,res)=> {
+app.get('/', (req, res) => {
     const mainPath = path.join(`${__dirname}`, '../static', "index.html");
     res.sendFile(`${mainPath}`);
 });
 
-app.post('/', (req,res)=>{
+app.post('/', (req, res) => {
     console.log(req.body);
 
     const transporter = nodemailer.createTransport({
+        service: 'Godaddy',
         host: 'smtp.gmail.com',
         port: 465,
-        secure: true,
+        secureConnection: true,
         auth: {
             user: `${email}`,
             pass: `${pass}`
-        },
-        tls: {
-            rejectUnauthorized: false
         }
     });
 
@@ -45,7 +43,7 @@ app.post('/', (req,res)=>{
 
     const mailOptions = {
         from: req.body.email,
-        to: 'gorskyalex20@gmail.com' ,
+        to: 'gorskyalex20@gmail.com',
         subject: `Message from website Red Mountain`,
         html:
             `<p>
@@ -69,6 +67,6 @@ app.post('/', (req,res)=>{
 
 })
 
-app.listen(PORT, ()=>{
+app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 })
