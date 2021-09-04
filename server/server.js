@@ -21,25 +21,17 @@ app.post('/', (req, res) => {
     console.log(req.body);
 
     const transporter = nodemailer.createTransport({
-        service: 'Godaddy',
         host: 'smtp.gmail.com',
         port: 465,
-        secureConnection: true,
+        secureConnection: false,
         auth: {
             user: `${email}`,
             pass: `${pass}`
+        },
+        tls:{
+            rejectUnauthorized: false
         }
     });
-
-    // const transporter = nodemailer.createTransport({
-    //     host: 'smtp.123-reg.co.uk',
-    //     port: 587,
-    //     // secure true,
-    //     auth: {
-    //         user: '',
-    //         pass: ''
-    //     }
-    // });
 
     const mailOptions = {
         from: req.body.email,
