@@ -1,0 +1,19 @@
+name: Server delivery
+on:
+  push:
+    branches:
+      - prod
+jobs:
+  push_to_registry:
+      name: Deliver and deploy on server
+      runs-on: ubuntu-latest
+      steps:
+        - name: Deliver to production server
+          env: 
+            PROJECT_PATH: ~/projects/red
+            DELIVERY_PATH: /var/www/projects
+          run: |
+            echo "${{ secrets.SERVER_KEY }}" > key
+            chmod 400 key
+            ssh -o StrictHostKeyChecking=no -i key ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }} \
+            "cd $PROJECT_PATH;git resest --hard;git pull;chmod -R 755 .;sudo cp -r $PROJECT_PATH $DELIVERY_PATH;"
