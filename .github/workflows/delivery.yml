@@ -16,4 +16,4 @@ jobs:
             echo "${{ secrets.SERVER_KEY }}" > key
             chmod 400 key
             ssh -o StrictHostKeyChecking=no -i key ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }} \
-            "cd $PROJECT_PATH;git resest --hard;git pull;chmod -R 755 .;sudo cp -r $PROJECT_PATH $DELIVERY_PATH;"
+            "cd $PROJECT_PATH;git reset --hard;git pull;chmod -R 755 .;sudo cp -r $PROJECT_PATH $DELIVERY_PATH;"
